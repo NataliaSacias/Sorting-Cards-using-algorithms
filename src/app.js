@@ -25,21 +25,16 @@ window.onload = function() {
   let figureRandom = figure[Math.floor(Math.random() * figure.length)];
   let characterRandom = character[Math.floor(Math.random() * character.length)];
 
-  //   for (let i = 0; i < 1; i++) {
-  //     let figure1 = document.querySelector("#figura1");
-  //     figure1.innerHTML = `<h1>
-  //     ${figure[figureIndex]}</h1>`;
-  //     document.querySelector("#numero").innerHTML = `<h1>
-  //             ${character[charactertIndex]}</h1>`;
-  //     document.querySelector("#figura2").innerHTML = `<h1>
-  //             ${figure[figureIndex]}</h1>`;
-  //   }
+  const principal = document.getElementById("principal");
 
-  document.querySelector("#figura1").innerHTML = `${figureRandom}`;
-  document.querySelector("#numero").innerHTML = `${characterRandom}`;
-  document.querySelector("#figura2").innerHTML = `${figureRandom}`;
-
-  // if (figureRandom == "♥" || figureRandom == "♦") {
-  //   figure1.style.color = "red";
-  //}
+  const pintarCarta = () => {
+    principal.innerHTML = `
+            <div class ="col-3">
+                <div id="figura1" class="card-body bg-white d-flex justify-content-start">${figureRandom}</div>
+                <div id="numero" class="card-body h-70 bg-white align-items-center d-flex justify-content-center pt-5">${characterRandom}</div>
+                <div id="figura2" class="card-body bg-white d-flex justify-content-start" style=transform: rotate(180deg);>${figureRandom}</div>
+            </div>`;
+  };
+  console.log(pintarCarta());
+  pintarCarta();
 };
