@@ -1,1 +1,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
+/*.red {
+  color: red;
+}*/
+
+.rotate {
+  transform: rotate(180deg);
+}

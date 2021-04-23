@@ -22,6 +22,7 @@ window.onload = function() {
     "Q",
     "K"
   ];
+
   let figureRandom = figure[Math.floor(Math.random() * figure.length)];
   let characterRandom = character[Math.floor(Math.random() * character.length)];
 
@@ -30,11 +31,15 @@ window.onload = function() {
   const pintarCarta = () => {
     principal.innerHTML = `
             <div class ="col-3">
-                <div id="figura1" class="card-body bg-white d-flex justify-content-start">${figureRandom}</div>
-                <div id="numero" class="card-body h-70 bg-white align-items-center d-flex justify-content-center pt-5">${characterRandom}</div>
-                <div id="figura2" class="card-body bg-white d-flex justify-content-start" style=transform: rotate(180deg);>${figureRandom}</div>
+                <div id="figura1" class="card-body bg-secondary d-flex justify-content-start">${figureRandom}</div>
+                <div id="numero" class="card-body bg-secondary d-flex align-items-center d-flex justify-content-center pt-5">${characterRandom}</div>
+                <div id="figura2" class="card-body bg-secondary d-flex justify-content-start rotate">${figureRandom}</div>
             </div>`;
+    if (figureRandom === "♥" || figureRandom === "♦") {
+      principal.style.color = "red";
+    } else {
+      principal.style.color = "black";
+    }
   };
-  console.log(pintarCarta());
   pintarCarta();
 };
