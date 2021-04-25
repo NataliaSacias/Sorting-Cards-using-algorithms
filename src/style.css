@@ -6,3 +6,10 @@
 .rotate {
   transform: rotate(180deg);
 }
+
+.carta {
+  background-color: darkgrey;
+  border-radius: 15px;
+  border: solid 1px black;
+  margin: 1%;
+}

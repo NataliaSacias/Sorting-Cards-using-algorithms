@@ -6,7 +6,8 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  let figure = ["♥", "♦", "♣", "♠"];
+  //let figure = ["♥", "♦", "♣", "♠"];
+  let figure = ["♣️", "♠️", "♦️", "♥️"];
   let character = [
     "A",
     "2",
@@ -23,23 +24,32 @@ window.onload = function() {
     "K"
   ];
 
-  let figureRandom = figure[Math.floor(Math.random() * figure.length)];
-  let characterRandom = character[Math.floor(Math.random() * character.length)];
+  const principal = document.getElementById("principal"); // div que contiene las cartas
+  let mostrarCarta = document.querySelector("#mostrar-carta"); //boton mostrar carta
+  let cantidad = document.querySelector("#cantidad");
 
-  const principal = document.getElementById("principal");
-
-  const pintarCarta = () => {
-    principal.innerHTML = `
-            <div class ="col-3">
-                <div id="figura1" class="card-body bg-secondary d-flex justify-content-start">${figureRandom}</div>
-                <div id="numero" class="card-body bg-secondary d-flex align-items-center d-flex justify-content-center pt-5">${characterRandom}</div>
-                <div id="figura2" class="card-body bg-secondary d-flex justify-content-start rotate">${figureRandom}</div>
+  const pintarCartas = () => {
+    for (let i = 0; i < cantidad.value; i++) {
+      let figureRandom = figure[Math.floor(Math.random() * figure.length)];
+      let characterRandom =
+        character[Math.floor(Math.random() * character.length)];
+      principal.innerHTML += `
+            <div class="m-6 col-2 carta">
+                <div id="figura1" class="card-body d-flex justify-content-start">${figureRandom}</div>
+                <div id="numero" class="card-body d-flex align-items-center d-flex justify-content-center pt-5 display-3">${characterRandom}</div>
+                <div id="figura2" class="card-body d-flex justify-content-start rotate">${figureRandom}</div>
             </div>`;
-    if (figureRandom === "♥" || figureRandom === "♦") {
-      principal.style.color = "red";
-    } else {
-      principal.style.color = "black";
+      //   if (figureRandom === "♥" || figureRandom === "♦") {
+      //     principal.style.color = "red";
+      //   } else {
+      //     principal.style.color = "black";
+      //   }
+      twemoji.parse(document.body);
     }
   };
-  pintarCarta();
+
+  mostrarCarta.addEventListener("click", () => {
+    principal.innerHTML = "";
+    pintarCartas();
+  });
 };

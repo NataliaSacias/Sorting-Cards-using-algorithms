@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
+
   <body class="bg-success">
-    <div
-      id="principal"
-      class="container d-flex justify-content-center mt-5"
-    ></div>
+    <h1>
+      Visualización de cartas aleatorias y ordenamiento mediante algoritmos
+    </h1>
+    <h2>Ingrese la cantidad de cartas entre 1 y 5</h2>
+    <div>
+      <label for="cantidad">Cantidad de cartas</label>
+
+      <input type="number" id="cantidad" max="5" min="1" />
+    </div>
+    <button id="mostrar-carta">Mostrar</button>
+
+    <div id="principal" class="container-flow d-flex row"></div>
+
+    <h2>Elegir el método para ordenarlas de menor a mayor</h2>
+    <button id="boton-burbuja">Burbuja</button>
+    <button id="boton-seleccion">Seleccion</button>
+
+    <script
+      src="https://twemoji.maxcdn.com/v/13.0.1/twemoji.min.js"
+      integrity="sha384-5f4X0lBluNY/Ib4VhGx0Pf6iDCF99VGXJIyYy7dDLY5QlEd7Ap0hICSSZA1XYbc4"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
